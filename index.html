@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>可愛い家計簿カレンダー</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 50%, #e1bee7 100%);
+      min-height: 100vh;
+      padding: 24px 16px 48px;
+      color: #4a4a4a;
+    }
+    .container { max-width: 600px; margin: 0 auto; }
+    .lang-switch { text-align: right; margin-bottom: 16px; }
+    .lang-switch button {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid #e0b4c8;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      color: #c06090;
+      font-weight: 600;
+    }
+    .lang-switch button:hover { background: rgba(255,255,255,0.95); }
+    header { text-align: center; margin-bottom: 32px; }
+    header .app-icon { font-size: 64px; margin-bottom: 12px; }
+    header h1 { font-size: 28px; font-weight: 700; color: #b5477a; margin-bottom: 8px; }
+    header .subtitle { font-size: 15px; color: #c08090; line-height: 1.6; }
+    .card {
+      background: rgba(255,255,255,0.82);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(224,180,200,0.5);
+      box-shadow: 0 2px 12px rgba(180,100,130,0.08);
+    }
+    .card h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #b5477a;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f8bbd9;
+    }
+    .card p { font-size: 15px; line-height: 1.75; color: #555; margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card ul { padding-left: 20px; margin-top: 6px; }
+    .card ul li { font-size: 15px; line-height: 1.75; color: #555; margin-bottom: 4px; }
+    .store-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+    .store-badge {
+      display: inline-block;
+      background: #b5477a;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .store-badge:hover { opacity: 0.85; }
+    .links { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+    .links a {
+      color: #b5477a;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .links a:hover { text-decoration: underline; }
+    footer { text-align: center; font-size: 12px; color: #c098a8; margin-top: 24px; }
+    .en { display: none; }
+    .ja { display: block; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="lang-switch">
+      <button onclick="switchLang()">English / 日本語</button>
+    </div>
+
+    <header>
+      <div class="app-icon">🌸</div>
+      <div class="ja">
+        <h1>可愛い家計簿カレンダー</h1>
+        <p class="subtitle">スケジュール・タスク・家計簿をひとつのカレンダーで管理</p>
+      </div>
+      <div class="en">
+        <h1>Cute Budget Calendar</h1>
+        <p class="subtitle">Manage schedules, tasks &amp; budget in one calendar</p>
+      </div>
+    </header>
+
+    <!-- Japanese -->
+    <div class="ja">
+      <div class="card">
+        <h2>アプリについて</h2>
+        <p>可愛いパステルカラーのデザインで、毎日の予定管理と家計簿を楽しく続けられるカレンダーアプリです。</p>
+        <ul>
+          <li>予定・タスク・メモ・収支を日ごとに管理</li>
+          <li>月間レポートで収支を一目で確認</li>
+          <li>4つのテーマから好きなデザインを選択</li>
+          <li>10言語対応</li>
+        </ul>
+        <div class="store-badges">
+          <a href="https://apps.apple.com/app/id6761286711" class="store-badge">App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=com.takuyayamaguchi.calendarapp" class="store-badge">Google Play</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>サポート・お問い合わせ</h2>
+        <p>ご質問やご要望がございましたら、お気軽にお問い合わせください。</p>
+        <div class="links">
+          <a href="https://forms.gle/J9ZHG5g9en11Pts6A">お問い合わせフォーム</a>
+          <a href="https://emelianen5-ai.github.io/calendarapp-privacy/">プライバシーポリシー</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- English -->
+    <div class="en">
+      <div class="card">
+        <h2>About the App</h2>
+        <p>A beautifully designed pastel calendar app that makes managing your daily schedule and budget fun and easy.</p>
+        <ul>
+          <li>Manage schedules, tasks, memos &amp; finances by day</li>
+          <li>Monthly reports for income &amp; expenses at a glance</li>
+          <li>Choose from 4 beautiful themes</li>
+          <li>Supports 10 languages</li>
+        </ul>
+        <div class="store-badges">
+          <a href="https://apps.apple.com/app/id6761286711" class="store-badge">App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=com.takuyayamaguchi.calendarapp" class="store-badge">Google Play</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Support &amp; Contact</h2>
+        <p>If you have any questions or feedback, please feel free to reach out.</p>
+        <div class="links">
+          <a href="https://forms.gle/J9ZHG5g9en11Pts6A">Contact Form</a>
+          <a href="https://emelianen5-ai.github.io/calendarapp-privacy/">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 CalendarApp. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    var currentLang = 'ja';
+    function switchLang() {
+      currentLang = currentLang === 'ja' ? 'en' : 'ja';
+      document.querySelectorAll('.ja').forEach(function(el) { el.style.display = currentLang === 'ja' ? 'block' : 'none'; });
+      document.querySelectorAll('.en').forEach(function(el) { el.style.display = currentLang === 'en' ? 'block' : 'none'; });
+      document.documentElement.lang = currentLang;
+    }
+  </script>
+</body>
+</html>
