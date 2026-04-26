@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>可愛い家計簿カレンダー</title>
+  <title>アプリ一覧 | Apps</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -13,7 +13,7 @@
       padding: 24px 16px 48px;
       color: #4a4a4a;
     }
-    .container { max-width: 600px; margin: 0 auto; }
+    .container { max-width: 720px; margin: 0 auto; }
     .lang-switch { text-align: right; margin-bottom: 16px; }
     .lang-switch button {
       background: rgba(255,255,255,0.7);
@@ -27,42 +27,53 @@
     }
     .lang-switch button:hover { background: rgba(255,255,255,0.95); }
     header { text-align: center; margin-bottom: 32px; }
-    header .app-icon { font-size: 64px; margin-bottom: 12px; }
-    header h1 { font-size: 28px; font-weight: 700; color: #b5477a; margin-bottom: 8px; }
-    header .subtitle { font-size: 15px; color: #c08090; line-height: 1.6; }
+    header .header-icon { font-size: 48px; margin-bottom: 10px; }
+    header h1 { font-size: 26px; font-weight: 700; color: #b5477a; margin-bottom: 6px; }
+    header .subtitle { font-size: 14px; color: #c08090; line-height: 1.6; }
     .card {
-      background: rgba(255,255,255,0.82);
+      background: rgba(255,255,255,0.86);
       border-radius: 16px;
       padding: 24px;
       margin-bottom: 16px;
       border: 1px solid rgba(224,180,200,0.5);
       box-shadow: 0 2px 12px rgba(180,100,130,0.08);
     }
-    .card h2 {
-      font-size: 17px;
+    .card .app-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .card .app-icon { font-size: 36px; line-height: 1; }
+    .card .app-titles h2 {
+      font-size: 18px;
       font-weight: 700;
       color: #b5477a;
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #f8bbd9;
+      margin-bottom: 2px;
     }
-    .card p { font-size: 15px; line-height: 1.75; color: #555; margin-bottom: 10px; }
+    .card .app-titles .tagline { font-size: 12px; color: #c08090; }
+    .card p { font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 10px; }
     .card p:last-child { margin-bottom: 0; }
-    .card ul { padding-left: 20px; margin-top: 6px; }
-    .card ul li { font-size: 15px; line-height: 1.75; color: #555; margin-bottom: 4px; }
-    .store-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+    .card ul { padding-left: 20px; margin-top: 4px; margin-bottom: 12px; }
+    .card ul li { font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 2px; }
+    .store-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
     .store-badge {
       display: inline-block;
       background: #b5477a;
       color: #fff;
       text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 12px;
-      font-size: 15px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 14px;
       font-weight: 600;
       transition: opacity 0.2s;
     }
     .store-badge:hover { opacity: 0.85; }
+    .store-badge.secondary {
+      background: rgba(255,255,255,0.95);
+      color: #b5477a;
+      border: 1px solid #e0b4c8;
+    }
     .links { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
     .links a {
       color: #b5477a;
@@ -71,6 +82,14 @@
       font-weight: 500;
     }
     .links a:hover { text-decoration: underline; }
+    .section-heading {
+      font-size: 17px;
+      font-weight: 700;
+      color: #b5477a;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f8bbd9;
+    }
     footer { text-align: center; font-size: 12px; color: #c098a8; margin-top: 24px; }
     .en { display: none; }
     .ja { display: block; }
@@ -84,22 +103,29 @@
     </div>
 
     <header>
-      <div class="app-icon">🌸</div>
+      <div class="header-icon">📱</div>
       <div class="ja">
-        <h1>可愛い家計簿カレンダー</h1>
-        <p class="subtitle">スケジュール・タスク・家計簿をひとつのカレンダーで管理</p>
+        <h1>アプリ一覧</h1>
+        <p class="subtitle">TAKUYA YAMAGUCHI が開発したアプリのご紹介</p>
       </div>
       <div class="en">
-        <h1>Cute Budget Calendar</h1>
-        <p class="subtitle">Manage schedules, tasks &amp; budget in one calendar</p>
+        <h1>Apps</h1>
+        <p class="subtitle">Apps developed by TAKUYA YAMAGUCHI</p>
       </div>
     </header>
 
-    <!-- Japanese -->
+    <!-- ===== Japanese ===== -->
     <div class="ja">
+
+      <!-- Calendar App -->
       <div class="card">
-        <h2>アプリについて</h2>
-        <p>可愛いパステルカラーのデザインで、毎日の予定管理と家計簿を楽しく続けられるカレンダーアプリです。</p>
+        <div class="app-row">
+          <div class="app-icon">🌸</div>
+          <div class="app-titles">
+            <h2>可愛い家計簿カレンダー</h2>
+            <div class="tagline">スケジュール・タスク・家計簿をひとつで</div>
+          </div>
+        </div>
         <ul>
           <li>予定・タスク・メモ・収支を日ごとに管理</li>
           <li>月間レポートで収支を一目で確認</li>
@@ -109,24 +135,53 @@
         <div class="store-badges">
           <a href="https://apps.apple.com/app/id6761286711" class="store-badge">App Store</a>
           <a href="https://play.google.com/store/apps/details?id=com.takuyayamaguchi.calendarapp" class="store-badge">Google Play</a>
+          <a href="https://emelianen5-ai.github.io/calendarapp-privacy/" class="store-badge secondary">プライバシーポリシー</a>
         </div>
       </div>
 
+      <!-- CheatRoulette -->
       <div class="card">
-        <h2>サポート・お問い合わせ</h2>
-        <p>ご質問やご要望がございましたら、お気軽にお問い合わせください。</p>
+        <div class="app-row">
+          <div class="app-icon">🎰</div>
+          <div class="app-titles">
+            <h2>チートルーレット</h2>
+            <div class="tagline">見た目と実際の確率が違う！？ ジョークルーレット</div>
+          </div>
+        </div>
+        <ul>
+          <li>表示上の比率と実際の確率を別々に設定可能</li>
+          <li>ルーレット構成の保存・読み込み</li>
+          <li>サプライズ演出・パーティーゲーム用途に</li>
+        </ul>
+        <div class="store-badges">
+          <a href="https://apps.apple.com/app/id6761591227" class="store-badge">App Store</a>
+          <a href="https://emelianen5-ai.github.io/cheatroulette-privacy/" class="store-badge secondary">プライバシーポリシー</a>
+        </div>
+      </div>
+
+      <!-- Support -->
+      <div class="card">
+        <h2 class="section-heading">サポート・お問い合わせ</h2>
+        <p>ご質問・ご要望・不具合のご報告は下記よりお気軽にご連絡ください。すべてのアプリ共通の窓口です。</p>
         <div class="links">
-          <a href="https://forms.gle/J9ZHG5g9en11Pts6A">お問い合わせフォーム</a>
-          <a href="https://emelianen5-ai.github.io/calendarapp-privacy/">プライバシーポリシー</a>
+          <a href="https://forms.gle/J9ZHG5g9en11Pts6A">📩 お問い合わせフォーム</a>
         </div>
       </div>
-    </div>
 
-    <!-- English -->
+    </div><!-- /ja -->
+
+    <!-- ===== English ===== -->
     <div class="en">
+
+      <!-- Calendar App -->
       <div class="card">
-        <h2>About the App</h2>
-        <p>A beautifully designed pastel calendar app that makes managing your daily schedule and budget fun and easy.</p>
+        <div class="app-row">
+          <div class="app-icon">🌸</div>
+          <div class="app-titles">
+            <h2>Cute Budget Calendar</h2>
+            <div class="tagline">Schedules, tasks &amp; budget in one calendar</div>
+          </div>
+        </div>
         <ul>
           <li>Manage schedules, tasks, memos &amp; finances by day</li>
           <li>Monthly reports for income &amp; expenses at a glance</li>
@@ -136,21 +191,43 @@
         <div class="store-badges">
           <a href="https://apps.apple.com/app/id6761286711" class="store-badge">App Store</a>
           <a href="https://play.google.com/store/apps/details?id=com.takuyayamaguchi.calendarapp" class="store-badge">Google Play</a>
+          <a href="https://emelianen5-ai.github.io/calendarapp-privacy/" class="store-badge secondary">Privacy Policy</a>
         </div>
       </div>
 
+      <!-- CheatRoulette -->
       <div class="card">
-        <h2>Support &amp; Contact</h2>
-        <p>If you have any questions or feedback, please feel free to reach out.</p>
-        <div class="links">
-          <a href="https://forms.gle/J9ZHG5g9en11Pts6A">Contact Form</a>
-          <a href="https://emelianen5-ai.github.io/calendarapp-privacy/">Privacy Policy</a>
+        <div class="app-row">
+          <div class="app-icon">🎰</div>
+          <div class="app-titles">
+            <h2>CheatRoulette</h2>
+            <div class="tagline">A joke roulette where displayed odds differ from real ones</div>
+          </div>
+        </div>
+        <ul>
+          <li>Set displayed ratio and actual probability independently</li>
+          <li>Save and load roulette configurations</li>
+          <li>Great for surprises and party games</li>
+        </ul>
+        <div class="store-badges">
+          <a href="https://apps.apple.com/app/id6761591227" class="store-badge">App Store</a>
+          <a href="https://emelianen5-ai.github.io/cheatroulette-privacy/" class="store-badge secondary">Privacy Policy</a>
         </div>
       </div>
-    </div>
+
+      <!-- Support -->
+      <div class="card">
+        <h2 class="section-heading">Support &amp; Contact</h2>
+        <p>If you have questions, feedback, or want to report a bug, please reach out below. Common contact for all apps.</p>
+        <div class="links">
+          <a href="https://forms.gle/J9ZHG5g9en11Pts6A">📩 Contact Form</a>
+        </div>
+      </div>
+
+    </div><!-- /en -->
 
     <footer>
-      <p>&copy; 2026 CalendarApp. All rights reserved.</p>
+      <p>&copy; 2026 TAKUYA YAMAGUCHI. All rights reserved.</p>
     </footer>
 
   </div>
